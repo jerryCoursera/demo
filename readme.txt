@@ -1,0 +1,35 @@
+
+## upgrade python2 to python3 in to aws linux box
+#connect to box, do yum update
+$ sudo yum update
+#check python
+$ python --version
+#if version 3 not installed, do it
+$ sudo yum install python3 -y
+#use the which command to confirm that the install was successful.
+$ which python3
+##install virtualenv and create the python3 environment
+#Install virtualenv for the current user using pip3.
+$ pip3 install --user virtualenv
+# Create a directory to hold your virtualenv environments
+$ pwd
+$ mkdir venv
+$ cd venv
+$ pwd
+# Use the virtualenv command to create the python3 environment.
+$ virtualenv -p /usr/bin/python3 python3
+##Activate the environment and install Boto 3
+$ source /home/ec2-user/venv/python3/bin/activate
+#Use the which command to verify that you are now referencing the new environment.
+$ which python
+# Use the pip3 command to install Boto 3 from within the python3 environment.
+$ pip3 install boto3
+# now type python and canimport boto3, finally, to deactivate the python3 environment
+$  deactivate
+
+ #Run the which command to confirm that you are using the default environment.
+$ which python
+/usr/bin/python
+
+### To activate the python3 environment automatically when you log in, add it to your .bashrc file.
+$ echo "source /home/ec2-user/venv/python3/bin/activate" >> /home/ec2-user/.bashrc
