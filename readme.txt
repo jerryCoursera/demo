@@ -33,3 +33,14 @@ $ which python
 
 ### To activate the python3 environment automatically when you log in, add it to your .bashrc file.
 $ echo "source /home/ec2-user/venv/python3/bin/activate" >> /home/ec2-user/.bashrc
+
+
+# after activate the desired python environment
+#install numpy
+$ pip install numpy
+
+#install nlopt
+$ pip install nlopt
+
+# then we can open the test_run.py and test the example
+
