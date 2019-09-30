@@ -1,5 +1,5 @@
 
-## upgrade python2 to python3 in to aws linux box
+##01. upgrade python2 to python3 in to aws linux box
 #connect to box, do yum update
 $ sudo yum update
 #check python
@@ -31,7 +31,7 @@ $  deactivate
 $ which python
 /usr/bin/python
 
-### To activate the python3 environment automatically when you log in, add it to your .bashrc file.
+###02. To activate the python3 environment automatically when you log in, add it to your .bashrc file.
 $ echo "source /home/ec2-user/venv/python3/bin/activate" >> /home/ec2-user/.bashrc
 
 
@@ -44,3 +44,8 @@ $ pip install nlopt
 
 # then we can open the test_run.py and test the example
 
+###03. to run restful service example, need to install connexion
+$ pip install connexion[swagger-ui]
+
+###ohter dependencies
+$ pip install python-dateutil

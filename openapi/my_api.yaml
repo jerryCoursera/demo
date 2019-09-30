@@ -1,0 +1,53 @@
+openapi: "3.0.0"
+info:
+  title: Some Restful API service demo
+  description: Some Restful API service demo
+  version: 2.0.0
+  contact:
+    name: Author Me
+    email: a@b.c
+    url: http://www.myurl
+
+#servers:
+  #- url: http://172.16.2.216/ui/#
+
+paths:
+
+  /getoptexamples/:
+    get:
+      tags:
+        - Optimization Examples
+      summary: get all examples in a list
+      description: get all examples in a list
+      operationId: app.controllers.api_opt_get_example_list
+      responses:
+        '200':
+          description: The optimization example list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+
+  /runofficialexample/{optId}:
+    get:
+      tags:
+        - Optimization Examples
+      summary: run nlopt tutorial example
+      description: run nlopt tutorial example
+      operationId: app.controllers.api_opt_run_official_example
+      parameters:
+        - name: optId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: The optimization result from engine
+          content:
+            application/json:
+              schema:
+                type: object
+

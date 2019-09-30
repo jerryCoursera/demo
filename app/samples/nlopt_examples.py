@@ -8,6 +8,11 @@ class nlopt_examples:
         self.status = -999
         pass
 
+    def get_all_examples(self):
+        result = [{"optId": 1, "title": "official example", "type": "no linear optimization"},
+                  {"optId": 2, "title": "time-consuming example", "type": "custom examples"}
+                  ]
+        return result
 ########### example from author   ##############
 ###
 ###     min: sqre(x_2)
@@ -30,7 +35,7 @@ class nlopt_examples:
         print("minimum value = ", minf)
         print("result code = ", status)
         result = {"variableList": [{"id": 0, "name": "x1", "value": x[0] }, {"id": 1, "name": "x2", "value": x[1] }]
-                  , "objectiveValue": minf, "statusCode": status }
+                  , "objectiveValue": minf, "optStatusCode": status }
         return result
 
     def _official_myfunc(self, x, grad):

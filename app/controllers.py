@@ -1,9 +1,15 @@
-from samples.nlopt_examples import nlopt_examples
+from app.samples.nlopt_examples import nlopt_examples
+from flask import jsonify
 
-def run_official_example():
+def api_opt_get_example_list():
+    a = nlopt_examples()
+    result = a.get_all_examples()
+    return jsonify(result)
+
+def api_opt_run_official_example(optId):
     a = nlopt_examples()
     result = a.run_offcial_example()
-    return result#jsonify(ResponseHandler(status_code=200, payload={"status": str(result)}, message="data retrieved successfully").to_dict())
+    return jsonify(result)
 
-result = run_official_example()
-print(repr(result))
+#    result = api_run_official_example()
+#    print(repr(result))
