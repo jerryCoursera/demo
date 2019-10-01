@@ -1,4 +1,5 @@
-in aws ubuntu box: assume python3 installed already
+### follow aws tutorial, create a new box with ubuntu linux,
+### in aws ubuntu box: assume python3 installed already
 $ sudo apt-get update
 $ sudo apt-get install python3-pip
 ### in project,to create requirements.txt, to do this:
