@@ -11,5 +11,9 @@ def api_opt_run_official_example(optId):
     result = a.run_offcial_example()
     return jsonify(result)
 
+def api_opt_run_longtime_example(optId):
+    a = nlopt_examples()
+    result = a.run_offcial_example()
+    return jsonify(result)
 #    result = api_run_official_example()
 #    print(repr(result))
