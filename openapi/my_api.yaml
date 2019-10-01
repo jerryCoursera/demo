@@ -8,8 +8,9 @@ info:
     email: a@b.c
     url: http://www.myurl
 
-#servers:
-  #- url: http://172.16.2.216/ui/#
+servers:
+  - url: /1.0
+    description: /1.0
 
 paths:
 
