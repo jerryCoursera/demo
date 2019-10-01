@@ -6,8 +6,12 @@ $ sudo yum update
 $ python --version
 #if version 3 not installed, do it
 $ sudo yum install python3 -y
+$ sudo apt install python3
 #use the which command to confirm that the install was successful.
 $ which python3
+#in order to use the github to deploy, need to install the git tools
+$ sudo yum install git
+
 ##install virtualenv and create the python3 environment
 #Install virtualenv for the current user using pip3.
 $ pip3 install --user virtualenv
@@ -23,7 +27,8 @@ $ source /home/ec2-user/venv/python3/bin/activate
 #Use the which command to verify that you are now referencing the new environment.
 $ which python
 # Use the pip3 command to install Boto 3 from within the python3 environment.
-$ pip3 install boto3
+$ pip3 install
+
 # now type python and canimport boto3, finally, to deactivate the python3 environment
 $  deactivate
 
