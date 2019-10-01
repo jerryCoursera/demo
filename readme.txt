@@ -1,3 +1,29 @@
+in aws ubuntu box: assume python3 installed already
+$ sudo apt-get update
+$ sudo apt-get install python3-pip
+### in project,to create requirements.txt, to do this:
+$ pip3 free > requirements.txt
+### then to install all dependencies,
+$ pip3 install requirements.txt
+
+### to enable the port used in flask, for example 8831, in aws:
+### open the security group which assigned to the aws instance, add the inbound rule with port 8831 and save
+
+to set python3.6 as default if both 3.4 and 3.6 installed, to do the following:
+$ sudo update-alternatives --config python
+### Will show you an error:
+$ update-alternatives: error: no alternatives for python3
+### You need to update your update-alternatives , then you will be able to set your default python version.
+$ sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.4 1
+$ sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.6 2
+### Then run :
+$ sudo update-alternatives --config python
+### Set python3.6 as default.
+### Or use the following command to set python3.6 as default:
+$ sudo update-alternatives  --set python /usr/bin/python3.6
+
+
+which
 
 ##01. upgrade python2 to python3 in to aws linux box
 #connect to box, do yum update
