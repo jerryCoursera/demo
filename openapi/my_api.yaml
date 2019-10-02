@@ -1,6 +1,6 @@
 openapi: "3.0.0"
 info:
-  title: Some Restful API service demo
+  title: Restful API Service Demo
   description: Some Restful API service demo
   version: 2.0.0
   contact:
@@ -52,3 +52,44 @@ paths:
               schema:
                 type: object
 
+  /runlongtimeexample/{optId}:
+    get:
+      tags:
+        - Optimization Examples
+      summary: run long time example
+      description: run long time example
+      operationId: app.controllers.api_opt_run_longtime_example
+      parameters:
+        - name: optId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: The optimization result from engine
+          content:
+            application/json:
+              schema:
+                type: object
+
+  /runlongtimeexamplewithqueue/{optId}:
+    get:
+      tags:
+        - Optimization Examples
+      summary: run long time example with sqs queue
+      description: run long time example with sqs queue
+      operationId: app.controllers.api_opt_run_longtime_example_with_queue
+      parameters:
+        - name: optId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: The optimization result from engine
+          content:
+            application/json:
+              schema:
+                type: object

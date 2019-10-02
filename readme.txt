@@ -3,9 +3,29 @@
 $ sudo apt-get update
 $ sudo apt-get install python3-pip
 ### in project,to create requirements.txt, to do this:
+$ git clone https://github.com/xxx/demo.git demo
+$ cd demo
 $ pip3 free > requirements.txt
 ### then to install all dependencies,
-$ pip3 install requirements.txt
+$ pip3 install -r requirements.txt
+### for connexion, if swagger-ui needed(usually), need to do this:
+$ pip3 uninstall connexion
+$ pip3 install connexion[swagger-ui]
+
+### to run app in a seperate window, do this:
+# install screen:
+$ sudo apt-get install screen
+# Screen usage:
+$ screen -list
+# enter a screen named myapp
+$ screen -r myapp
+# to exit the current screen
+$ Ctrl A + Ctrl D
+# to create a new screen named "myapp"
+$ screen -S myapp
+# to kill a screen named "myapp"
+$ screen -S myapp -X kill
+
 
 ### to enable the port used in flask, for example 8831, in aws:
 ### open the security group which assigned to the aws instance, add the inbound rule with port 8831 and save
@@ -24,7 +44,7 @@ $ sudo update-alternatives --config python
 $ sudo update-alternatives  --set python /usr/bin/python3.6
 
 
-which
+
 
 ##01. upgrade python2 to python3 in to aws linux box
 #connect to box, do yum update
@@ -77,7 +97,7 @@ $ pip install nlopt
 # then we can open the test_run.py and test the example
 
 ###03. to run restful service example, need to install connexion
-$ pip install connexion[swagger-ui]
+$ pip3 install connexion[swagger-ui]
 
 ###ohter dependencies
 $ pip install python-dateutil
