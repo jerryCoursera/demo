@@ -10,7 +10,8 @@ class nlopt_examples:
 
     def get_all_examples(self):
         result = [{"optId": 1, "title": "official example", "type": "no linear optimization"},
-                  {"optId": 2, "title": "time-consuming example", "type": "custom examples"}
+                  {"optId": 2, "title": "time-consuming example", "type": "custom examples"},
+                  {"optId": 3, "title": "time-consuming example with queue", "type": "custom examples"}
                   ]
         return result
 ########### example from author   ##############
